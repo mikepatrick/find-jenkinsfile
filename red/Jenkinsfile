@@ -10,8 +10,9 @@ pipeline {
         stage('Display Environment') {
             steps {
                 echo sh(returnStdout: true, script: 'env')
-                echo scriptPath
+                
                 def scriptPath = currentBuild.rawBuild.parent.definition.scriptPath
+                echo scriptPath
             }
         }
         stage('Setup') {
