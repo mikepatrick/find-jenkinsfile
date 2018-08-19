@@ -7,7 +7,11 @@ pipeline {
         choice(choices: 'us-east-1', description: 'What AWS region?', name: 'AWS_DEFAULT_REGION')
     }
     stages {
-
+        stage('Display Environment') {
+            steps {
+                echo sh(returnStdout: true, script: 'env')
+            }
+        }
         stage('Setup') {
             steps {
                 echo 'Running blue Jenkinsfile...'
