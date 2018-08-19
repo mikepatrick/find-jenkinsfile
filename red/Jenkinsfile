@@ -12,6 +12,7 @@ pipeline {
                 echo sh(returnStdout: true, script: 'env')
                 script {
                     def scriptPath = currentBuild.rawBuild.parent.definition.scriptPath
+                    echo 'SCRIPTPATH:'
                     echo scriptPath
                 }
             }
